@@ -14,7 +14,7 @@ var dictionary  = './dict/cmudict.07a.dict';
  */
 suite.addBatch({
 
-    'Generate name': {
+    'Generic': {
 
         topic: function() {
             namebot({
@@ -39,12 +39,13 @@ suite.addBatch({
 
     },
 
-    'Generate name using remote HTTP request corpus': {
+    'Using only the random method': {
 
         topic: function() {
             namebot({
                 base:           base,
                 dictionary:     dictionary,
+                method:         ['random'],
             }, this.callback);
         },
 
