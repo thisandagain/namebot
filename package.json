@@ -1,6 +1,7 @@
 {
-    "author": "Andrew Sliwinski <andrew@diy.org> (http://diy.org)",
     "name": "namebot",
+    "version": "0.0.1",
+    "author": "Andrew Sliwinski <andrew@diy.org> (http://diy.org)",
     "description": "A node.js module for generating usernames based on a specified corpus.",
     "keywords": [
         "name",
@@ -10,7 +11,6 @@
         "dictionary",
         "corpus"
     ],
-    "version": "0.0.1",
     "homepage": "https://github.com/thisandagain/namebot",
     "repository": {
         "type": "git",
