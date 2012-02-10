@@ -6,7 +6,7 @@ var vows    = require('vows'),
  * Setup
  */
 var suite       = vows.describe('NameBot');
-var base        = ['badger', 'panda'];
+var base        = ['FOX', 'TURTLE', 'OWL', 'HOOT', 'WISE', 'BISON'];
 var dictionary  = './dict/cmudict.07a.dict';
 
 /**
@@ -24,8 +24,6 @@ suite.addBatch({
         },
 
         'is a string': function (err, obj) {
-            console.dir(err);
-            console.dir(obj);
             assert.isString(obj);
         },
 
@@ -39,13 +37,13 @@ suite.addBatch({
 
     },
 
-    'Using only the random method': {
+    'Using only the rhyme method': {
 
         topic: function() {
             namebot({
                 base:           base,
                 dictionary:     dictionary,
-                method:         ['random'],
+                method:         ['rhyme'],
             }, this.callback);
         },
 
@@ -59,6 +57,39 @@ suite.addBatch({
 
         'includes a base from corpus': function (err, obj) {
             assert.include(base, obj.split(' ')[0]);
+        }
+
+    },
+
+    'Using only the rhyme method (x10)': {
+
+        topic: function() {
+            namebot({
+                base:           base,
+                dictionary:     dictionary,
+                method:         ['random'],
+                count:          10
+            }, this.callback);
+        },
+
+        'is an array': function (err, obj) {
+            assert.isArray(obj);
+        },
+
+        'is the proper length': function (err, obj) {
+            assert.strictEqual(obj.length, 10);
+        },
+
+        'first item is a string': function (err, obj) {
+            assert.isString(obj[0]);  
+        },
+        
+        'first item includes two words': function (err, obj) {
+            assert.strictEqual(2, obj[0].split(' ').length);
+        },
+
+        'first item includes a base from corpus': function (err, obj) {
+            assert.include(base, obj[0].split(' ')[0]);
         }
 
     },
