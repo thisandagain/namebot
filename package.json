@@ -18,7 +18,7 @@
     },
     "main": "./lib/index.js",
     "bin": {
-        "namebot": "./bin/index.js",
+        "namebot": "./bin/index.js"
     },
     "scripts": {
         "test": "vows test/*"
