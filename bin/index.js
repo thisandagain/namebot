@@ -15,7 +15,7 @@ var fs 		= require('fs'),
 
 var argv 	= require('optimist')
 		.demand(['base'])
-		.default('dictionary', './dict/cmudict.07a.dict')
+		.default('dictionary', '../dict/cmudict.07a.dict')
 		.default('method', '["rhyme", "random"]')
 		.default('count', 1)
 		.argv;
