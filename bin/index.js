@@ -15,6 +15,7 @@ var fs 		= require('fs'),
 
 var argv 	= require('optimist')
 		.demand(['base'])
+		.demand(['species'])
 		.default('dictionary', '../dict/cmudict.07a.dict')
 		.default('method', '["rhyme", "random"]')
 		.default('count', 1)
@@ -30,19 +31,5 @@ namebot({
 	count: 			argv.count
 }, function (err, a) {
 	if (err) console.log(err);
-
 	console.dir(a);
-	/*
-	var pretty 	= JSON.stringify(a, null, 4);
-	var fsw 	= './names.json';
-
-	fs.writeFile(fsw, pretty, function (err) {
-	  	if (err) throw err;
-
-	  	console.log(pretty);
-	  	console.log('####')
-	  	console.log('JSON saved! ' + fsw);
-	  	console.log(' ');
-	});
-	*/
 });
