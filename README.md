@@ -31,7 +31,7 @@ namebot --base "['mega', 'shark', 'giant', 'octopus']" --count 25
 
 ### Options
 #### Base
-An array of words that form the basis for names. All names generated will include a word from this object. Can be specified as a local path or as a HTTP GET request to a JSON resource by passing along a URL string.
+An array of words that form the basis for names. All names generated will include a word from this object.
 
 #### Dictionary (Optional)
 Local path to a phonetic dictionary (see [CMUdict](http://www.speech.cs.cmu.edu/cgi-bin/cmudict) for reference).
