@@ -3,6 +3,8 @@
 
 [![Build Status](https://secure.travis-ci.org/thisandagain/namebot.png)](http://travis-ci.org/thisandagain/namebot)
 
+Namebot is a major component of what we use at DIY.org to generate silly nicknames for kids during [signup](https://diy.org/#join). Combined with a phonetic dictionary, namebot generates unique name combinations based on a specified set of base words. For simplicity, namebot is exposed as a readable stream which can be piped into stdout or a [write stream](http://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options).
+
 ### Install
 ```bash
 npm install namebot
