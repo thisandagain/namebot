@@ -10,26 +10,29 @@
 /**
  * Dependencies
  */
-var fs 		= require('fs'),
-	namebot = require('../lib/index');
+var fs      = require('fs'),
+    Namebot = require('../lib/index');
 
-var argv 	= require('optimist')
-		.demand(['base'])
-		.demand(['species'])
-		.default('dictionary', '../dict/cmudict.07a.dict')
-		.default('method', '["rhyme", "random"]')
-		.default('count', 1)
-		.argv;
+var argv    = require('optimist')
+        .demand(['base'])
+        .default('dictionary', __dirname + '/../dict/cmudict.07a.dict')
+        .default('count', 1)
+        .default('name', 'names.txt')
+        .argv;
 
 /**
  * Init
  */
-namebot({
-	base:  			eval(argv.base),
-	dictionary: 	argv.dictionary,
-	method: 		eval(argv.method),
-	count: 			argv.count
-}, function (err, a) {
-	if (err) console.log(err);
-	console.dir(a);
+var proc = new Namebot({
+    base:       eval(argv.base),
+    dictionary: argv.dictionary,
+    count:      argv.count
 });
+
+var filestream = fs.createWriteStream(process.cwd() + '/' + argv.name);
+
+/**
+ * Start
+ */
+proc.pipe(filestream);
+proc.start();
