@@ -1,6 +1,8 @@
 ## Namebot
 #### A robot that streams name combinations for you. Beep <buzz> ... *ding*!
 
+[![Build Status](https://secure.travis-ci.org/thisandagain/namebot.png)](http://travis-ci.org/thisandagain/namebot)
+
 ### Install
 ```bash
 npm install namebot
